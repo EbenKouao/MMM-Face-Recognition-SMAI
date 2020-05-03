@@ -1,0 +1,32 @@
+.face-image {
+    width: 200px;
+    height: auto;
+}
+
+.face-image img {
+    /*width: 100%*/
+    
+    width: 70%;
+    height: auto;
+	border: 1px solid #DDDDDD;      
+	border-radius: 20% 20% 20% 20%;      
+	padding: 4px; 
+-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(80%);
+}
+
+.face-image {
+    font-size: 16px;
+}
+
+.face-image.left {
+    margin: 0 auto 0 0;
+}
+
+.face-image.center {
+    margin: 0 auto;
+}
+
+.face-image.right {
+    margin: 0 0 0 auto;
+}
