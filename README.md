@@ -44,5 +44,5 @@ Here is an example for an entry in `config.js`
 }
 ```
 
-## Download beta of MMM-Face-Recognition-SMAI integration
+## Download beta image of MMM-Face-Recognition-SMAI integration
 ![Face Recognition on Raspberry Pi 4](img/readme/touchscreen-ui.png)
