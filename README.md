@@ -44,5 +44,18 @@ Here is an example for an entry in `config.js`
 }
 ```
 
-## Download beta image of MMM-Face-Recognition-SMAI integration
+## Step 3 – Configuring the Face Recognition Python Script
+Pre-requisite: Ageitgey Face_recognition Library has been installed:
+
+Copy the MMM-Face-Recognition-SMAI.py to the dlib Face Recognition Directory
+
+```bash cd modules
+cp /home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/MMM-Face-Recognition-SMAI3.py /home/pi/dlib/build/face_recognition/examples
+```
+
+You could test a successful installation by running the Python script.
+From here you could program to add multiple profiles. We encourage contribution to this project.
+
+## Download Beta image of MMM-Face-Recognition-SMAI integration
+Any troubles installing, try out the already compiled Raspberry Pi (Buster) Image of [Magic Mirror with Face Recognition](https://smartbuilds.io) module.
 ![Face Recognition on Raspberry Pi 4](img/readme/touchscreen-ui.png)
