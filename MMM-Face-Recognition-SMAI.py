@@ -1,8 +1,9 @@
-# SMAI V1.0 - Face Recognition Module
+# SMAI V1.01 - Face Recognition Module
 
 # Modified by: Pratik & Eben
 # This is a modified script from the open source face recognition repo:
 #https://github.com/ageitgey/face_recognition
+# Patch update to fix bugs
 
 import face_recognition
 import picamera
@@ -64,7 +65,7 @@ while True:
 
         print("Person Detected: {}!".format(face_id))
         f = open("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", "w")
-        f.write(face_id)
+        f.write(name)
         f.close()
         #time taken before the user is logged off from the mirror
         time.sleep(15)
