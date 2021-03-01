@@ -1,4 +1,6 @@
 var util = require("util");
+const path = require("path");
+
 
 
 /// node_helper.js
@@ -14,7 +16,7 @@ module.exports = NodeHelper.create({
 
   
       var fs = require('fs');
-      fs.readFile("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", function(err,data)
+      fs.readFile(path.join(__dirname, "sample.txt"), function(err,data)
             {
                 if(err)
                     console.log(err)
@@ -23,7 +25,7 @@ module.exports = NodeHelper.create({
                     console.log(face_rec_name);
             });
   
-      fs.readdir('/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/public/', (err, datadir) => {
+      fs.readdir(path.join(__dirname, 'public/'), (err, datadir) => {
         if (err) throw err;
           
           // Try it where we expect a match

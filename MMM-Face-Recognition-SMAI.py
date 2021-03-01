@@ -12,6 +12,8 @@ import sys
 import os
 import time
 
+FR_MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Get a reference to the Raspberry Pi camera.
 # If this fails, make sure you have a camera connected to the RPi and that you
 # enabled your camera in raspi-config and rebooted first.
@@ -21,7 +23,7 @@ output = np.empty((240, 320, 3), dtype=np.uint8)
 
 # Load a sample picture and learn how to recognize it.
 print("Loading known face image(s)")
-rec_image = face_recognition.load_image_file("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/public/face.png")
+rec_image = face_recognition.load_image_file(os.path.join( FR_MODULE_DIR, "public","face.png"))
 rec_face_encoding = face_recognition.face_encodings(rec_image)[0]
 
 # Initialize some variables
@@ -50,7 +52,7 @@ while True:
         name = "<Unknown Person>"
    
         if id_check == 0:
-            for file in os.listdir("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/public"):
+            for file in os.listdir(os.path.join(FR_MODULE_DIR,"public")):
                 if file.endswith("-id.png"):
                     face_id = file.replace('-', ' ').split(' ')[0]
                     #print(face_id)
@@ -64,12 +66,12 @@ while True:
             
 
         print("Person Detected: {}!".format(face_id))
-        f = open("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", "w")
+        f = open(os.path.join(FR_MODULE_DIR, "sample.txt"), "w")
         f.write(name)
         f.close()
         #time taken before the user is logged off from the mirror
         time.sleep(15)
         
-    f = open("/home/pi/MagicMirror/modules/MMM-Face-Recognition-SMAI/sample.txt", "w")
+    f = open(os.path.join(FR_MODULE_DIR, "sample.txt"), "w")
     f.write(face_id)
     f.close()
